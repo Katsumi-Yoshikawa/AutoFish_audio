@@ -1,6 +1,6 @@
-# AutoFish_backend
+# AutoFish_audio
 
-AutoFish_backend is a native macOS utility for monitoring loopback/system audio and sending configured keyboard actions to a selected target application. It is designed for workflows where an audible event should trigger a small, repeatable key sequence without manually switching back to the target app.
+AutoFish_audio is a native macOS utility for monitoring loopback/system audio and sending configured keyboard actions to a selected target application. It is designed for workflows where an audible event should trigger a small, repeatable key sequence without manually switching back to the target app.
 
 The app listens to an available audio capture backend, displays realtime volume activity, and can trigger key actions when the realtime volume exceeds a user-defined threshold. It also includes optional timers for periodic actions such as Auto Lure and Auto Log in-out.
 
@@ -59,15 +59,15 @@ See [Usage Guide](docs/USAGE.md) for detailed setup instructions.
 
 ## Permissions
 
-AutoFish_backend requires macOS Accessibility permission to send keyboard events. When using BlackHole or another fallback loopback device, macOS may also require microphone/audio input permission because the loopback device is exposed to apps through the audio input permission model.
+AutoFish_audio requires macOS Accessibility permission to send keyboard events. When using BlackHole or another fallback loopback device, macOS may also require microphone/audio input permission because the loopback device is exposed to apps through the audio input permission model.
 
 See [Permissions](docs/PERMISSIONS.md) for details.
 
 ## Safety Boundary
 
-AutoFish_backend does not read, inspect, or modify the selected target application's memory, data, settings, or files. It uses public macOS APIs for audio capture and keyboard event delivery.
+AutoFish_audio does not read, inspect, or modify the selected target application's memory, data, settings, or files. It uses public macOS APIs for audio capture and keyboard event delivery.
 
-Keyboard events are synthetic events. Some applications may ignore them, treat them differently from physical keyboard input, or restrict background delivery. AutoFish_backend does not attempt to bypass application security, anti-cheat, anti-bot, or automation detection systems.
+Keyboard events are synthetic events. Some applications may ignore them, treat them differently from physical keyboard input, or restrict background delivery. AutoFish_audio does not attempt to bypass application security, anti-cheat, anti-bot, or automation detection systems.
 
 See [Limitations](docs/LIMITATIONS.md) before using or modifying the app.
 
