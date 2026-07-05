@@ -18,11 +18,11 @@ The app listens to an available audio capture backend, displays realtime volume 
 
 ## System Requirements
 
-- macOS 11 Big Sur or later.
+- macOS 12 Monterey or later.
 - Xcode command line tools or Xcode for building from source.
 - Accessibility permission for keyboard event delivery.
 - Microphone/audio input permission when using a fallback loopback input.
-- A loopback audio device such as BlackHole 2ch is recommended for macOS 11 Big Sur and macOS 12 Monterey.
+- A loopback audio device such as BlackHole 2ch is recommended for macOS 12 Monterey.
 
 ## Quick Start
 
