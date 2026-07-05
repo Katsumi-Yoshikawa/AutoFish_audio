@@ -1,0 +1,82 @@
+# Usage Guide
+
+This guide describes how to use AutoFish_backend after it has been built and opened.
+
+## 1. Select a Target Application
+
+Use the target application picker to select a currently running app. AutoFish_backend sends keyboard events to that selected target process.
+
+If the target app is not listed:
+
+- Make sure the target app is already open.
+- Click Refresh.
+- Select the app again before starting.
+
+## 2. Configure Keys and Timing
+
+The Keys and Timing section controls the main trigger action.
+
+- Int. Key: the first key sent after a trigger.
+- Fishing Key: the second key sent after the randomized between-key delay.
+- Minimum delay / Maximum delay: randomized delay between Int. Key and Fishing Key, in milliseconds.
+- Min before-key delay / Max before-key delay: randomized delay before the first key is sent, in milliseconds.
+- Run duration: total monitoring time, in minutes.
+- Cooldown: minimum time between accepted triggers, in seconds.
+
+Key fields are capture fields. Click a key field, then press the key you want to assign. Supported keys include letters, digits, common US keyboard symbols, Enter, Space, Tab, and Escape.
+
+## 3. Configure Realtime Audio Check
+
+Realtime Audio Check displays recent audio volume activity.
+
+- Realtime: the current volume value.
+- Maximum: the maximum recent volume value.
+- Volume trigger threshold: triggers the configured key action when Realtime volume exceeds this value.
+- Fallback input: optional loopback input device, such as BlackHole 2ch.
+
+On macOS 11 Big Sur and macOS 12 Monterey, use a virtual loopback input such as BlackHole 2ch when direct system audio capture is unavailable. Built-in microphones do not capture headphone audio and are not a replacement for loopback audio.
+
+## 4. Optional Auto Lure
+
+Auto Lure sends one configured key at a fixed interval while monitoring is running.
+
+- Enable Auto Lure with its switch.
+- Set Lure interval in minutes.
+- Set Lure Key by clicking the key field and pressing the desired key.
+
+The Auto Lure key uses a 150 ms key-up delay.
+
+## 5. Optional Auto Log in-out
+
+Auto Log in-out sends two configured keys on a randomized cycle while monitoring is running.
+
+Controls:
+
+- Enable Auto Log in-out with its switch.
+- Log out: first key.
+- Log in: second key.
+- Min key interval / Max key interval: randomized delay between the two keys, in seconds.
+- Min cycle time / Max cycle time: randomized cycle wait before the pair is executed, in minutes.
+
+After the two-key action completes, the timer starts again and waits for the next randomized cycle.
+
+## 6. Runtime Controls
+
+- Start: begins monitoring and timers.
+- Pause: pauses monitoring and background timers.
+- Stop: stops monitoring, timers, pending key tasks, and active audio capture.
+- Simulate Match: development/verification helper for exercising the trigger path when sample matching is available.
+
+The app also stops automatically when Run duration is reached.
+
+## 7. Runtime Log
+
+Runtime Log records successful trigger events. It keeps a bounded visible history while the Matches counter tracks the cumulative count for the current session.
+
+Each log entry includes:
+
+- Similarity field.
+- Before-key delay.
+- Between-key delay.
+
+When the trigger is volume-based, the similarity field may not represent an audio sample match.
